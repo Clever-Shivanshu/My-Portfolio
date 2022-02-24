@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+</head>
+<body>
+   <style>
+     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto+Mono:wght@300;500&family=Poppins:wght@600&display=swap');
+
+/* Variables */
+:root {
+	--primary-color: #5924ed;
+	--secondary-black: #0d081a;
+	--secondary-gray: #48464b;
+	--body-bg: #efebfa;
+}
+
+/* Global Styles */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-family: 'Roboto Mono';
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+body {
+	background-color: var(--body-bg);
+}
+img {
+	width: 90%;
+	height: 90%;
+}
+a {
+	color: black;
+	text-decoration: none;
+}
+
+section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	width: 90%;
+    height: 100%;
+	margin: 0 auto;
+	max-width: 1000px;
+}
+p {
+	font-size: 1.6rem;
+	color: var(--secondary-black);
+}
+
+.primary-btn{
+	display: inline-block;
+	background-color: var(--primary-color);
+	color: white;
+	font-size: 1.8rem;
+	padding: 0.6em 1.6em;
+	border-radius: 50px;
+}
+
+.buttons svg{
+    width: 100%; 
+    color: var(--primary-color);
+}
+
+.buttons{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+	animation: fade 0.50s ease-in forwards;
+	animation-delay: 0.59s;
+	opacity: 0
+}
+
+.section-heading{
+	font-size: clamp(2rem, 10vw, 8rem);
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+	text-align: center;
+	letter-spacing: 0.2rem;
+	position: relative;
+	margin-bottom: 10rem;
+}
+
+.section-heading::before {
+	content: attr(data-outline);
+	position: absolute;
+	left: 2%;
+	top: -20%;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Montserrat';
+	letter-spacing: 0.2rem;
+	color: transparent;
+	-webkit-text-stroke: 1.5px #D4C7F8;
+	z-index: -1;
+}
+
+/* hero section styles starts */
+#hero {
+  height: 100vh;
+  width: 100%;
+  padding-top: 10rem;
+}
+
+#hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+#hero .container .left {
+    flex: 6;
+}
+
+#hero .container .right {
+   flex: 8;
+}
+
+#hero .left .subheading {
+	font-size: 1.8rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: var(--primary-color);
+	animation: fade 0.3s ease-in forwards;
+	animation-delay: 1.1s;
+	opacity: 0;
+}
+
+#hero .left .heading{
+    font-size: 6rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#hero .left .desc{
+    margin-top: 2.5rem;
+    max-width: 400px;
+	color: var(--secondary-black);
+	animation: fade 0.3s ease-in forwards;
+	animation-delay: 1s;
+	opacity: 0;
+}
+
+#hero .right{
+    text-align: right;
+}
+
+#hero .right img{
+   width: 100%;
+   max-width: 450px;
+   animation: fade 0.3s ease-in forwards;
+   animation-delay: 0.59s;
+   opacity: 0
+}
+
+@media only screen and (max-width: 768px) {
+	html {
+		font-size: 9px;
+	}
+	#hero .container {
+		flex-direction: column-reverse;
+	}
+	#hero .container .right {
+		text-align: center;
+		flex: 1;
+		margin-bottom: 2rem;
+	}
+	#hero .container .left {
+		text-align: center;
+		padding-right: 0;
+		flex: 1;
+		height: fit-content;
+	}
+	#hero .left .buttons {
+		justify-content: center;
+	}
+	#hero .left .heading {
+		font-size: 4rem;
+		margin: 0 auto;
+	}
+	#hero .container .left .desc {
+		margin: 0 auto;
+		margin-top: 2rem;
+	}
+	#hero .right img {
+		width: 100%;
+		height: 65%;
+	}
+}
+@media only screen and (max-width: 950px) {
+	#hero .container .right {
+		flex: 6;
+	}
+}
+
+#hero .left .heading .wrapper {
+	/* position: relative; */
+	display: inline-block;
+	overflow: hidden;
+	/* border: 1px solid red; */
+}
+#hero .left .heading .wrapper span {
+	position: relative;
+	bottom: -70px;
+	animation: reveal 1s ease-in-out forwards;
+}
+@keyframes reveal {
+	0% {
+		bottom: -70px;
+	}
+	100% {
+		bottom: 0px;
+	}
+}
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/* hero section styles ends */
+/* services section styles starts */
+
+#services {
+	padding: 15rem 0;
+}
+
+#services .all-items {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+#services .item {
+	padding: 1.5rem;
+	transition: 0.3s ease-in-out background-color;
+	border-radius: 12px;
+	flex: 1;
+}
+
+#services .item:nth-child(1):hover {
+	background-color: rgb(8 69 241 / 35%);
+}
+#services .item:nth-child(2):hover {
+	background-color: rgba(0, 255, 115, 0.151);
+}
+
+#services .item .icon {
+	width: 50px;
+	height: 50px;
+	padding: 0.8rem;
+	border-radius: 50%;
+	margin-bottom: 1rem;
+}
+
+#services .item-heading {
+	font-weight: 500;
+	font-size: 2rem;
+	font-family: 'Poppins', sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+#services .item-desc {
+	color: var(--secondary-gray);
+}
+
+#services .item:nth-child(1) .icon{
+	background-color: rgb(8 69 241 / 35%);
+}
+
+#services .item:nth-child(2) .icon{
+	background-color: rgba(0, 255, 115, 0.151);
+}
+
+@media only screen and (max-width: 768px) {
+	#services .all-items {
+		flex-direction: column;
+		text-align: center;
+	}
+	#services .item .icon {
+		margin: 0 auto;
+		margin-bottom: 1rem;
+	}
+	#services .item {
+		margin: 2rem 0;
+	}
+	#services .item:nth-child(1) {
+		background-color: rgb(8 69 241 / 35%);
+	}
+	#services .item:nth-child(2) {
+		background-color: rgba(0, 255, 115, 0.151);
+	}
+	#services .item:nth-child(3) {
+		background-color: #cbbef093;
+	}
+}
+
+/* services section styles ends */
+/* about section styles starts */
+
+#about {
+	padding: 15rem 0;
+}
+
+#about .left {
+	padding: 2rem;
+	text-align: center;
+}
+
+#about .left .card {
+	box-shadow: 0px 0px 20px #4705fc33;
+	padding: 3rem;
+	border-radius: 12px;
+	min-height: 250px;
+}
+
+#about .left .card .img {
+	width: 70px;
+	height: 70px;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 2rem;
+}
+
+#about .left .card .img img {
+	object-fit: cover;
+}
+
+#about .left .card .card-desc {
+	color: var(--secondary-gray);
+	margin-bottom: 2rem;
+}
+
+#about .left .card .card-name {
+	font-size: 2rem;
+	margin-bottom: 0.2rem;
+}
+
+#about .left .card .card-sub-title {
+	font-size: 1.4rem;
+}
+
+#about .subheading {
+	color: var(--primary-color);
+	margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+	#about .wrapper {
+		flex-direction: column-reverse;
+		text-align: center;
+	}
+	#about .right .buttons {
+		flex-direction: column;
+	}
+	#about .right .buttons a {
+		width: 100%;
+		text-align: center;
+	}
+}
+/* about section styles ends */
+#projects {
+	padding: 10rem 0;
+}
+#projects .item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 800px;
+	margin: 0 auto;
+	margin-bottom: 15rem;
+	/* gap: 2rem; */
+}
+#projects .item:nth-of-type(even) {
+	flex-direction: row-reverse;
+}
+#projects .item .left {
+	flex: 1;
+}
+#projects .item .right {
+	margin-left: -150px;
+	flex: 1;
+	background-color: var(--body-bg);
+	padding: 5rem 3rem;
+	border-radius: 12px;
+	box-shadow: 0px 0px 20px #00000028;
+	z-index: 2;
+}
+#projects .item:nth-of-type(even) .right {
+	margin-left: 0;
+}
+#projects .item:nth-of-type(even) .left {
+	margin-left: -150px;
+}
+#projects .item .left .img {
+	height: 400px;
+	overflow: hidden;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0px 0px 20px #4705fc33;
+	position: relative;
+}
+#projects .item .left .img::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #5a24ed38;
+}
+#projects .item .left .img img {
+	object-fit: cover;
+	transition: 0.3s ease transform;
+}
+#projects .item:hover .left .img img {
+	transform: scale(1.1);
+	z-index: 1;
+}
+#projects .item .right .project-title {
+	font-size: 2.5rem;
+	font-family: 'Montserrat';
+	margin-bottom: 1rem;
+}
+#projects .item .right .project-sub-title {
+	font-size: 1.6rem;
+	margin-bottom: 2rem;
+}
+#projects .item .right .project-desc {
+	color: var(--secondary-gray);
+	margin-bottom: 3rem;
+}
+#projects .item .right .external-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding: calc(0.6em - 4px) calc(1.6em - 4px);
+}
+#projects .item .right .external-link svg {
+	width: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+	#projects .item {
+		flex-direction: column;
+	}
+	#projects .item .left {
+		width: 100%;
+	}
+	#projects .item .right {
+		margin-left: 0;
+		width: 90%;
+		margin-top: -150px;
+	}
+	#projects .item:nth-of-type(even) {
+		flex-direction: column;
+	}
+	#projects .item:nth-of-type(even) .left {
+		margin-left: 0;
+	}
+}
+@media only screen and (max-width: 450px) {
+	#projects .item .right .buttons {
+		flex-direction: column;
+	}
+	#projects .item .right .buttons a {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Footer Section starts*/
+#footer {
+	background-color: #311580;
+	color: white;
+	padding: 10rem 0 5rem 0;
+}
+#footer footer {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 2rem;
+}
+#footer footer .col-1 {
+	flex: 3;
+}
+#footer footer .col-2,
+#footer footer .col-3,
+#footer footer .col-4 {
+	flex: 2;
+}
+#footer footer .col-4 {
+	flex: 1;
+}
+
+#footer footer .col-1 .logo img {
+	max-width: 100px;
+	margin-bottom: 2rem;
+}
+#footer footer .col-1 p {
+	color: white;
+}
+
+#footer footer .column-heading {
+	font-family: 'Montserrat';
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	text-transform: uppercase;
+	line-height: 1.5em;
+}
+#footer footer ul {
+	list-style: none;
+}
+#footer footer ul li {
+	border-radius: 4px;
+}
+#footer footer ul li:hover {
+	background-color: white;
+}
+#footer footer ul li:hover a {
+	color: var(--primary-color);
+}
+#footer footer ul li a {
+	display: inline-block;
+	width: 100%;
+	color: white;
+	font-size: 1.7rem;
+	padding: 0.5rem;
+}
+#footer footer .col-4 ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+#footer footer .col-4 ul li a {
+	min-width: 50px;
+}
+@media only screen and (max-width: 768px) {
+	#footer footer {
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+	#footer footer .col-1,
+	#footer footer .col-2,
+	#footer footer .col-3,
+	#footer footer .col-4 {
+		width: 100%;
+		margin-bottom: 3rem;
+	}
+	#footer footer .col-4 ul {
+		width: fit-content;
+		margin: 0 auto;
+	}
+}
+/* copyright Section starts */
+#copyright {
+	padding: 1rem 0;
+	background-color: #221052;
+}
+#copyright p {
+	color: white;
+	margin: 1rem;
+	font-size: 1.4rem;
+}
+@media only screen and (max-width: 768px) {
+	#copyright p {
+		text-align: center;
+	}
+}
+/* copyright Section ends */
+/* footer Section ends*/
+
+/* scroll Top/Up Button */
+.scroll-top {
+	z-index: 100;
+	height: 60px;
+	width: 60px;
+	background-color: white;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+	border-radius: 6px;
+	box-shadow: 0px 0px 20px rgba(71, 40, 182, 0.226);
+	/* hover effect default */
+	transform: scale(0.9);
+	transition: 0.3s ease-in-out transform;
+	/* for centering the icon */
+	/* display: flex; */
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+.scroll-top svg {
+	width: 50%;
+	color: black;
+	pointer-events: none;
+}
+
+.scroll-top:hover {
+	transform: scale(1);
+}
+
+/* Navigation Section */
+#navigation {
+	position: fixed;
+	right: 50px;
+	height: auto;
+	top: 20px;
+	z-index: 100;
+}
+#navigation .nav-icon {
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	margin-right: 0;
+	cursor: pointer;
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#navigation .nav-icon svg {
+	width: 80%;
+	color: white;
+}
+#nav-content {
+	position: fixed;
+	right: 0;
+	width: 80%;
+	max-width: 800px;
+	height: 100%;
+	z-index: 100;
+	background-color: var(--secondary-black);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	transform: translateX(100%);
+	transition: 0.3s ease transform;
+}
+#nav-content.show {
+	transform: translateX(0);
+	box-shadow: -6px 0px 29px 7px #000000a3;
+}
+#nav-content .section-heading {
+	text-align: left;
+}
+#nav-content .section-heading::before {
+	content: 'Menu';
+	text-align: left;
+	-webkit-text-stroke: 1.5px #afadad25;
+}
+#nav-content .wrapper {
+	width: 70%;
+	position: relative;
+}
+#nav-content ul {
+	list-style: none;
+	text-align: left;
+}
+#nav-content ul li {
+	margin-bottom: 2rem;
+}
+#nav-content ul li a {
+	display: inline-block;
+	width: 100%;
+	color: white;
+	font-size: 5rem;
+	font-family: 'Montserrat';
+	/* position: relative; */
+}
+#nav-content ul li a::after {
+	content: attr(data-text);
+	pointer-events: none;
+	position: absolute;
+	right: -150px;
+	bottom: 30%;
+	width: 100%;
+	color: transparent;
+	-webkit-text-stroke: 1.5px #afadad25;
+	opacity: 0;
+	transition: 0.3s ease;
+	transition-property: opacity, transform;
+	z-index: -1;
+	text-align: center;
+	transform: rotate(90deg) scale(3);
+}
+#nav-content ul li a:hover::after {
+	opacity: 1;
+	transform: scale(3) translateY(10px) rotate(90deg);
+}
+#nav-content .close-btn {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	color: white;
+	width: 40px;
+	height: 40px;
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: 0.3s ease background-color;
+}
+#nav-content .close-btn:hover {
+	background-color: crimson;
+}
+#nav-content .close-btn svg {
+	width: 80%;
+}
+@media only screen and (max-width: 768px) {
+	#navigation {
+		right: 10px;
+		top: 10px;
+	}
+	#nav-content nav ul li a::after {
+		display: none;
+	}
+	#nav-content .section-heading {
+		text-align: right;
+		margin-bottom: 5rem;
+	}
+	#nav-content .section-heading::before {
+		text-align: right;
+	}
+	#nav-content nav ul {
+		text-align: right;
+	}
+	#nav-content nav ul li a {
+		font-size: 2.5rem;
+	}
+	#nav-content .wrapper {
+		width: 90%;
+	}
+}
+/* Navigation Section ENDS*/
+
+   </style>  
+  <!-- Scroll Top Button -->
+  <div class="scroll-top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18" />
+    </svg>
+  </div>
+  <!-- Navigation -->
+  <section id="navigation">
+    <div class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </div>
+  </section>
+  <div id="nav-content">
+    <div class="close-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <div class="wrapper">
+      <h2 class="section-heading">Menu</h2>
+      <nav>
+        <ul>
+          <li><a data-text="Home" href="#hero">Home</a></li>
+          <li><a data-text="Services" href="#services">Services</a></li>
+          <li><a data-text="About" href="#about">About</a></li>
+          <li><a data-text="Projects" href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- hero section starts -->
+    <section id="hero">
+        <div class="container">
+            <div class="left">
+                <h2 class="heading">
+                   <div class="wrapper"><span>Hi</span></div>
+                   <div class="wrapper"><span>Guys,</span></div>
+                   <p class="subheading">I'm Cyber Pixel</p>
+                </h2>
+                <p class="desc">Creating a world that you have never seen.</p>
+                <div class="buttons">
+                    <a href="#projects" class="primary-btn">See my Projects</a>
+                </div>
+            </div>
+            <div class="right">
+                <img src="Logo.png" alt="cps">
+            </div>
+        </div>
+    </section>
+    <!-- hero section ends -->
+    <!-- services section starts -->
+
+    <section id="services">
+        <div class="container">
+          <h2 class="section-heading" data-outline="services">services</h2>
+          <div class="all-items">
+            <div class="item">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="item-heading">Web Developer</h3>
+              <p class ="item-desc">I am a web developer. I build cool website with blazing fast speed. Website with high performance and nice layout can lead the visitor more.</p>
+            </div>
+            <div class="item">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                  </svg>
+              </div>
+              <h3 class="item-heading">Game Developer</h3>
+              <p class ="item-desc">I am a game developer. I make cool games with unity. A game is a computer-controlled game where players interact with objects displayed on a screen for the sake of entertainment.</p>
+            </div>
+            </div>
+          </div>
+      </section>
+    <!-- services section ends -->
+    <!-- about section starts -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-heading" data-outline="about">About</h2>
+        <div class="wrapper">
+          <div class="left">
+            <div class="card">
+              <div class="img">
+                <img src="Logo.png" alt="">
+              </div>
+              <p class="card-desc">I’m a web and game developer live in Ghaziabad,a city in the Indian state of Uttar Pradesh and a part of Delhi NCR. I love making Website and Games and I need to improve it. </p>
+              <h3 class="card-name">Cyber Pixel</h3>
+              <p class="card-sub-title">Beginner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about section ends -->
+    <!-- projects section starts -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-heading" data-outline="Projects">Projects</h2>
+        <div class="all-items">
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="MemeTalk.png" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">MemeTalk</h2>
+              <h3 class="project-sub-title">Online real time Video chat app like zoom.</h3>
+              <p class="project-desc">MemeTalk helps you to connect to people with over 1k people support for free.</p>
+              <div class="buttons">
+                <a href="https://meme-talk.vercel.app/" class="primary-btn">Preveiw</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="TO-DO List.png" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">To-Do List
+              </h2>
+              <h3 class="project-sub-title">A Website.
+              </h3>
+              <p class="project-desc">This help you to plan your day</p>
+              <div class="buttons">
+                <a href="https://to-do-list-cps.vercel.app" class="primary-btn">Preveiw</a>
+              </div>
+            </div>
+          </div>  
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="Weather Brite.png" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">Weather Brite
+              </h2>
+              <h3 class="project-sub-title">A Weather App
+              </h3>
+              <p class="project-desc">This help you to check the weather of the day.</p>
+              <div class="buttons">
+                <a href="https://weather-brite.netlify.app/" class="primary-btn">Preveiw</a>
+              </div>
+              <div class="buttons">
+                <a href="https://cyber-pixel-studio.itch.io/weather-brite" class="primary-btn">Download</a>
+              </div>
+            </div>
+          </div>  
+          </div>
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="123.png" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">123-Guess</h2>
+              <h3 class="project-sub-title">Just a small game.</h3>
+              <p class="project-desc">A game in which you have to guess the number between 1 and 100.</p>
+              <div class="buttons">
+                <a href="https://123-guess.vercel.app/" class="primary-btn">Preveiw</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="all-items">
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="insta.png" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">InstaChat</h2>
+              <h3 class="project-sub-title">Online real time private chat app like whatsapp.</h3>
+              <p class="project-desc">InstaChat helps you to chat to other people.</p>
+              <div class="buttons">
+                <a href="https://instachat.vercel.app/" class="primary-btn">Preveiw</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="superchat 2.0.png" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">SuperChat 2.0
+              </h2>
+              <h3 class="project-sub-title">A Realtime Public Chat Website.
+              </h3>
+              <p class="project-desc"></p>
+              <div class="buttons">
+                <a href="https://super-chat-app.vercel.app/" class="primary-btn">Preveiw</a>
+              </div>
+            </div>
+          </div>  
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="aa.gif" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">Animal animation
+              </h2>
+              <h3 class="project-sub-title">A Simple Animation
+              </h3>
+              <p class="project-desc"></p>
+              <div class="buttons">
+                <a href="https://a-a.vercel.app/" class="primary-btn">Preveiw</a>
+              </div>
+            </div>
+          </div>  
+          </div>
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="CZoJBx.gif" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">cmd clock</h2>
+              <h3 class="project-sub-title">Just a clock app.</h3>
+              <p class="project-desc"></p>
+              <div class="buttons">
+                <a href="https://cyber-pixel-studio.itch.io/cmd-clock" class="primary-btn">Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="all-items">
+          
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="win 11 demo.png" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">Win 11 Demo</h2>
+              <h3 class="project-sub-title">A Simple Os clone
+              </h3>
+              <p class="project-desc"></p>
+              <div class="buttons">
+                <a href="https://windows-11-web-demo.vercel.app" class="primary-btn">Preveiw</a>
+              </div>
+            </div>
+          </div>  
+          </div>
+          <div class="item">
+            <div class="left">
+              <div class="img">
+                <img src="flappy.png" alt="">
+              </div>
+            </div>
+            <div class="right">
+              <h2 class="project-title">flappy bird</h2>
+              <h3 class="project-sub-title">A Small game</h3>
+              <p class="project-desc">a game inspired on the official flappy bird</p>
+              <div class="buttons">
+                <a href="https://cyber-pixel-studio.itch.io/flappy-bird" class="primary-btn">Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- projects section ends -->
+    <!-- Footer section starts -->
+  <section id="footer">
+    <div class="container">
+      <footer>
+        <div class="col-2">
+          <h2 class="column-heading">Important<br>Links</h2>
+          <ul>
+            <li><a href="./index.html#hero">Home</a></li>
+            <li><a href="./index.html#services">Services</a></li>
+            <li><a href="./index.html#about">About</a></li>
+            <li><a href="./index.html#projects">Projects</a></li>
+          </ul>
+        </div>
+        <div class="col-3">
+          <h2 class="column-heading">Contact<br>Info</h2>
+          <ul>
+            <li><a>bhashkarsushma83@gmail.com</a></li>
+            <li><a>Ghaziabad, UP</a></li>
+          </ul>
+        </div>
+        <div class="col-4">
+          <h2 class="column-heading">Follow us on</h2>
+          <ul>
+            <li><a href="https://github.com/Cyber-Pixel-Studio">GT</a></li>
+            <li><a href="https://www.youtube.com/channel/UCOOGi6wBHDcW29qbYf9vPgg">YT</a></li>
+            <li><a href="https://dev.to/cyberpixelstudio">DV</a></li>
+            <li><a href="https://cyber-pixel-studio.itch.io">II</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+  <section id="copyright">
+    <div class="container">
+      <p> &copy; Copyright 2021 Cyber Pixel. All right Reserved</p>
+    </div>
+  </section>
+  <!-- Footer section ends -->
+  
+ <script>
+   const hamburgerMenu = document.querySelector('#navigation .nav-icon');
+const navContent = document.querySelector('#nav-content');
+const closeNavButton = document.querySelector('#nav-content .close-btn');
+const navLinks = document.querySelectorAll('#nav-content nav ul li a');
+const scrollButton = document.querySelector(".scroll-top");
+
+// scroll TOP Button Events
+
+if(scrollButton){
+  window.addEventListener('scroll', ()=> {
+    if(pageYOffset > (window.innerHeight * 1.2)){
+      scrollButton.style.display="flex";
+    }else{
+      scrollButton.style.display="none";
+    }
+  });
+  scrollButton.addEventListener("click", () => {
+    window.scrollTo(0, 0);
+  });
+}
+
+// Hamburger Menu events
+hamburgerMenu.addEventListener('click', ()=>{
+  navContent.classList.add('show');
+  document.body.style.overflow="hidden";
+});
+closeNavButton.addEventListener('click', ()=>{
+  navContent.classList.remove('show');
+  document.body.style.overflow="initial";
+});
+navLinks.forEach( link => {
+  link.addEventListener('click', ()=> {
+    navContent.classList.remove('show');
+    document.body.style.overflow="initial";
+  })
+})
+ </script>
+</body>
+</html>
